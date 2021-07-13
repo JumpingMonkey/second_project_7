@@ -1,4 +1,5 @@
 //Подключаем галп
+const plumber = require('gulp-plumber');
 const gulp = require('gulp');
 const browserSync = require('browser-sync').create();
 const less = require("gulp-less");
@@ -17,7 +18,8 @@ gulp.task('html', () => {
 
 gulp.task('css', function () {
   return gulp.src('source/less/style.less')
-    .pipe(less())
+  // .pipe(plumber())  
+  .pipe(less())
     .pipe(gulp.dest('build/css'));
 });
 
